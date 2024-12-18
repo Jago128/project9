@@ -2,6 +2,7 @@ package main;
 
 import utilidades.Utilidades;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import clases.*;
@@ -58,6 +59,22 @@ public class GestionDeVentas {
 	}
 	
 	public static void venta(HashMap <String, Articulo> prod) {
-		
+		int num, cant;
+		String name, surN, code;
+		double total;
+		ArrayList <LineaFactura> lF= new ArrayList <LineaFactura>();
+		System.out.println("Numero Factura:");
+		num=Utilidades.leerInt();
+		System.out.println("Nombre Cliente:");
+		name=Utilidades.introducirCadena();
+		System.out.println("Apellido Cliente:");
+		surN=Utilidades.introducirCadena();
+		do {
+			System.out.println("Codigo de producto:");
+			code=Utilidades.introducirCadena();
+			System.out.println("Cantidad de producto:");
+			cant=Utilidades.leerInt();
+			
+		} while (!code.equalsIgnoreCase("end"));
 	}
 }

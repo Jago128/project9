@@ -35,33 +35,41 @@ public class ListaArticulo {
 	}
 	
 	public ArrayList <Articulo> masCaro() {
-		//Make a new ArrayList
-		int caro=0;
+		ArrayList <Articulo> caro=new ArrayList <Articulo>();
+		int c=0;
 		for (int i=0; i<list.size(); i++) {
-			if (list.get(i).getPrice()>caro) {
-				caro=i;
+			if (list.get(i).getPrice()>c) {
+				c=i;
 			}
 		}
-		if (list.get(caro) instanceof Refresco) {
-			((Refresco)list.get(caro)).printCaracteristicas();
-		}
-		
-		if (list.get(caro) instanceof Vino) {
-			((Vino)list.get(caro)).printCaracteristicas();
-		}
- 		return list;
+		caro.add(list.get(c));
+ 		return caro;
 	}
 	
 	public ArrayList <Articulo> equivalentes(String code) {
-		for (int i=0; i<list.size(); i++) {
-			
+		double price=0;
+		ArrayList <Articulo> equiv=new ArrayList <Articulo>();
+		for (Articulo a:list) {
+			if (a.getCode().equalsIgnoreCase(code)) {
+				price=a.getPrice();
+			}
 		}
-		return list;
+		
+		for (int i=0;i<list.size();i++) {
+			if (list.get(i).getPrice()==price) {
+				equiv.add(list.get(i));
+			}
+		}
+		return equiv;
 	}
 	
 	public double precio(String code) {
-		double precio=0;
-		
-		return precio;
+		double price=0;
+		for (Articulo a:list) {
+			if (a.getCode().equalsIgnoreCase(code)) {
+				price=a.getPrice();
+			}
+		}
+		return price;
 	}
 }

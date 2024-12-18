@@ -61,13 +61,11 @@ public abstract class Articulo {
 	}
 	
 	public int SumarStock(int stock) {
-		this.stock=this.stock+stock;
-		return this.stock;
+		return this.stock+stock;
 	}
 	
 	public int QuitarStock(int stock) {
-		stock--; //PH
-		return stock;
+		return this.stock-stock;
 	}
 	
 	public abstract void printCaracteristicas();
