@@ -57,12 +57,12 @@ public abstract class Articulo {
 
 	@Override
 	public String toString() {
-		return "Articulo [Codigo: "+code+", Nombre: "+name+", Marca: "+brand+", Precio: "+price+", Stock: "+stock+"]";
+		return "Codigo: "+code+", Nombre: "+name+", Marca: "+brand+", Precio: "+price+", Stock: "+stock+"";
 	}
 	
 	public int SumarStock(int stock) {
-		stock++; //PH
-		return stock;
+		this.stock=this.stock+stock;
+		return this.stock;
 	}
 	
 	public int QuitarStock(int stock) {

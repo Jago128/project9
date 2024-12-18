@@ -48,17 +48,16 @@ public class Refresco extends Articulo {
 
 	@Override
 	public String toString() {
-		return "Refresco [flavour=" + flavour + ", juice=" + juice + ", gas=" + gas + ", sugar=" + sugar+ ", toString()=" + super.toString() + "]";
+		return "Refresco ["+super.toString()+" Sabor: "+flavour+", Zumo: "+juice+", Gas: "+gas+", Azucar: "+sugar+"]";
 	}
 
 	@Override
 	public void printCaracteristicas() {
-		
+		System.out.println(this.toString());
 	}
 
 	@Override
 	public boolean sano() {
-		
-		return false;
+		return this.sugar<25;
 	}
 }

@@ -47,17 +47,16 @@ public class Vino extends Articulo {
 	
 	@Override
 	public String toString() {
-		return "Vino [colour=" + colour + ", origin=" + origin + ", year=" + year + ", grape=" + grape + ", toString()="+ super.toString() + "]";
+		return "Vino ["+super.toString()+" Color: "+colour+", Origen: "+origin+", Año: "+year+", Uva: "+grape+"]";
 	}
 
 	@Override
 	public void printCaracteristicas() {
-		
+		System.out.println(this.toString());
 	}
 
 	@Override
 	public boolean sano() {
-		
-		return false;
+		return this.origin.equalsIgnoreCase("Rioja");
 	}
 }
