@@ -73,7 +73,7 @@ public class Factura implements Facturacion {
 	@Override
 	public double calcularTotal() {
 		double total=0;
-		ArrayList <Articulo> a=new ArrayList <Articulo>();
+		ArrayList <ListaArticulo> a=new ArrayList <ListaArticulo>();
 		
 		return total;
 	}
