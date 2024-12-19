@@ -6,7 +6,15 @@ public class Refresco extends Articulo {
 	private boolean gas;
 	private int sugar;
 
-	public Refresco(String c, String n, String b, double p, int s, String f, boolean j, boolean g, int sugar) {
+	public Refresco() {
+		super();
+		this.flavour="";
+		this.juice=false;
+		this.gas=false;
+		this.sugar=0;
+	}
+	
+	public Refresco(String c, String n, Brand b, double p, int s, String f, boolean j, boolean g, int sugar) {
 		super(c,n,b,p,s);
 		this.flavour=f;
 		this.juice=j;

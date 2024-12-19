@@ -4,6 +4,13 @@ public class LineaFactura {
 	private String code; //Product Code
 	private int quantity;
 	private double lineTotal;
+	
+	public LineaFactura() {
+		this.code="";
+		this.quantity=0;
+		this.lineTotal=0;
+	}
+	
 	public LineaFactura(String code, int quantity, double lineTotal) {
 		this.code = code;
 		this.quantity = quantity;

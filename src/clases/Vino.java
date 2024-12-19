@@ -1,11 +1,21 @@
 package clases;
 
+import java.time.LocalDate;
 public class Vino extends Articulo {
 	private String colour;
 	private String origin;
 	private int year;
 	private String grape;
-	public Vino(String c, String n, String b, double p, int s, String colour, String o, int y, String g) {
+	
+	public Vino() {
+		super();
+		this.colour="";
+		this.origin="";
+		this.year=LocalDate.now().getYear();
+		this.grape="";
+	}
+	
+	public Vino(String c, String n, Brand b, double p, int s, String colour, String o, int y, String g) {
 		super(c,n,b,p,s);
 		this.colour=colour;
 		this.origin=o;

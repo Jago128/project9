@@ -10,6 +10,14 @@ public class Factura implements Facturacion {
 	private ArrayList<LineaFactura> receiptLines;
 	private double total;
 
+	public Factura() {
+		this.num=0;
+		this.name="";
+		this.surN="";
+		this.receiptLines=new ArrayList<>();
+		this.total=0;
+	}
+	
 	public Factura(int num, String name, String surN, ArrayList<LineaFactura> receiptLines, double total) {
 		this.num = num;
 		this.name = name;
@@ -68,13 +76,18 @@ public class Factura implements Facturacion {
 
 	public void print() {
 		System.out.println(this.toString());
+		for (LineaFactura r:receiptLines) {
+			System.out.println(r.toString());
+		}
 	}
 
 	@Override
 	public double calcularTotal() {
 		double total=0;
-		ArrayList <ListaArticulo> a=new ArrayList <ListaArticulo>();
+		for (LineaFactura r:this.receiptLines) {
+			total+=r.getLineTotal();
+		}
 		
-		return total;
+		return total*=1+IVA;
 	}
 }
